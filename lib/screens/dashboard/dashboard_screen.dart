@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import '../login/login_screen.dart';
-import '../class/class_screen.dart';
 import 'tabs/home_tab.dart';
 import 'tabs/my_info_tab.dart';
+import 'tabs/class_tab.dart';
 import 'tabs/fee_tab.dart';
 import 'tabs/exams_tab.dart';
 import 'tabs/more_tab.dart';
@@ -24,6 +24,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       currentIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> tabs = [
@@ -32,8 +33,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
         onTabSelected: _onTabChanged,
       ),
       const MyInfoTab(),
-      ClassScreen(onOpenDrawer: () => _scaffoldKey.currentState?.openDrawer()),
-      FeeTab(onOpenDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+      ClassTab(onOpenDrawer: () => _scaffoldKey.currentState?.openDrawer()),
+      const FeeTab(),
       const ExamsTab(),
       const MoreTab(),
     ];
